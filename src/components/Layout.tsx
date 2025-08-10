@@ -11,7 +11,7 @@ export default function Layout({ children }: LayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-space bg-stars text-white">
       <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 py-6">
           <nav className="flex items-center justify-between">
