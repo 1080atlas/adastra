@@ -12,12 +12,13 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <div className="min-h-screen bg-space bg-stars text-white">
-      <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur-sm sticky top-0 z-50">
+      <header className="border-b border-line bg-card/95 backdrop-blur-sm sticky top-0 z-50 relative">
+        <div className="absolute inset-x-0 top-0 h-0.5 bg-crimson/70" aria-hidden />
         <div className="max-w-6xl mx-auto px-4 py-6">
           <nav className="flex items-center justify-between">
             <Link 
               href="/" 
-              className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent hover:from-blue-300 hover:to-purple-400 transition-all duration-300"
+              className="font-serif text-xl tracking-wide text-accent hover:text-accent-600 transition-colors"
             >
               Ad Astra
             </Link>
@@ -26,19 +27,19 @@ export default function Layout({ children }: LayoutProps) {
             <div className="hidden md:flex space-x-8">
               <Link 
                 href="/prompts/fanfic" 
-                className="text-gray-300 hover:text-blue-400 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded px-2 py-1"
+                className="text-muted hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/40 rounded px-2 py-1 transition-colors"
               >
                 Fanfic Archive
               </Link>
               <Link 
                 href="/prompts/fan-art" 
-                className="text-gray-300 hover:text-purple-400 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded px-2 py-1"
+                className="text-muted hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/40 rounded px-2 py-1 transition-colors"
               >
                 Fan Art Archive
               </Link>
               <Link 
                 href="/leaderboard" 
-                className="text-gray-300 hover:text-yellow-400 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded px-2 py-1"
+                className="text-muted hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent/40 rounded px-2 py-1 transition-colors"
               >
                 Leaderboard
               </Link>
@@ -46,7 +47,7 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded p-2"
+              className="md:hidden text-muted hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent/40 rounded p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -58,25 +59,25 @@ export default function Layout({ children }: LayoutProps) {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden mt-4 pb-4 border-t border-gray-700 pt-4">
+            <div className="md:hidden mt-4 pb-4 border-t border-line pt-4">
               <div className="flex flex-col space-y-3">
                 <Link 
                   href="/prompts/fanfic" 
-                  className="text-gray-300 hover:text-blue-400 transition-colors font-medium py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded px-2"
+                  className="text-muted hover:text-accent transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-accent/40 rounded px-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Fanfic Archive
                 </Link>
                 <Link 
                   href="/prompts/fan-art" 
-                  className="text-gray-300 hover:text-purple-400 transition-colors font-medium py-2 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded px-2"
+                  className="text-muted hover:text-accent transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-accent/40 rounded px-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Fan Art Archive
                 </Link>
                 <Link 
                   href="/leaderboard" 
-                  className="text-gray-300 hover:text-yellow-400 transition-colors font-medium py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded px-2"
+                  className="text-muted hover:text-accent transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-accent/40 rounded px-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Leaderboard
@@ -91,9 +92,9 @@ export default function Layout({ children }: LayoutProps) {
         {children}
       </main>
       
-      <footer className="border-t border-gray-800 bg-gray-900 mt-auto">
+      <footer className="border-t border-line bg-card mt-auto">
         <div className="max-w-6xl mx-auto px-4 py-12">
-          <div className="text-center text-gray-400">
+          <div className="text-center text-muted">
             <p className="mb-6 text-base leading-relaxed max-w-4xl mx-auto">
               Weekly community prompts are run on r/redrising (Fanfic on Monday, Fan Art on Tuesday). 
               Entries are posted on Reddit and linked here through this archive. 
@@ -101,14 +102,14 @@ export default function Layout({ children }: LayoutProps) {
               This site is non-commercial and links to creator posts; content remains on Reddit.
             </p>
             <div className="flex items-center justify-center space-x-2 text-sm">
-              <span className="text-blue-400 font-semibold">Ad Astra</span>
+              <span className="text-accent font-semibold">Ad Astra</span>
               <span>•</span>
               <span>Non-commercial community archive for</span>
               <a 
                 href="https://www.reddit.com/r/redrising" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-orange-400 hover:text-orange-300 transition-colors underline focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded"
+                className="text-crimson hover:text-crimson-700 transition-colors underline focus:outline-none focus:ring-2 focus:ring-accent/40 rounded"
               >
                 r/redrising
               </a>

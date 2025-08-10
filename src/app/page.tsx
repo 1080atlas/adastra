@@ -20,21 +20,21 @@ export default async function Home() {
   return (
     <Layout>
       <div className="text-center mb-16">
-        <h1 className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+        <h1 className="font-serif text-5xl md:text-6xl font-bold mb-8 text-accent">
           Ad Astra
         </h1>
-        <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
+        <p className="text-xl md:text-2xl text-ink max-w-4xl mx-auto leading-relaxed mb-8">
           Community prompt archive for{' '}
           <a 
             href="https://www.reddit.com/r/redrising" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="text-orange-400 hover:text-orange-300 transition-colors underline"
+            className="text-crimson hover:text-crimson-700 transition-colors underline"
           >
             r/redrising
           </a>
         </p>
-        <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-lg text-muted max-w-3xl mx-auto leading-relaxed">
           Weekly community prompts run on Fanfic Monday and Fan Art Tuesday. 
           All entries live on Reddit — this archive links to them with full attribution to creators.
         </p>
@@ -56,45 +56,45 @@ export default async function Home() {
         />
       </div>
       
-      <div className="bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-xl p-8 lg:p-12">
+      <div className="rounded-2xl border border-line bg-card p-8 lg:p-12 shadow-soft">
         <div className="text-center mb-8">
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+          <h2 className="font-serif text-4xl font-bold mb-4 text-accent">
             Top Contributors
           </h2>
-          <p className="text-gray-400 text-lg">
+          <p className="text-muted text-lg">
             Community members ranked by participation and engagement
           </p>
         </div>
         
         {errorMessage ? (
           <div className="text-center py-12">
-            <div className="text-gray-400 mb-6">
+            <div className="text-muted mb-6">
               <svg className="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
               </svg>
             </div>
-            <p className="text-lg text-gray-400 mb-3">{errorMessage}</p>
-            <div className="bg-gray-800 border border-gray-600 rounded-lg p-6 max-w-2xl mx-auto">
-              <p className="text-sm text-gray-300 mb-4 font-medium">Scoring System:</p>
+            <p className="text-lg text-muted mb-3">{errorMessage}</p>
+            <div className="bg-card border border-line rounded-lg p-6 max-w-2xl mx-auto">
+              <p className="text-sm text-ink mb-4 font-medium">Scoring System:</p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                 <div className="text-center">
-                  <div className="text-green-400 font-bold text-lg">+5</div>
-                  <div className="text-gray-400">Submission</div>
+                  <div className="text-accent font-bold text-lg">+5</div>
+                  <div className="text-muted">Submission</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-yellow-400 font-bold text-lg">+15</div>
-                  <div className="text-gray-400">1st Place</div>
+                  <div className="text-accent font-bold text-lg">+15</div>
+                  <div className="text-muted">1st Place</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-gray-300 font-bold text-lg">+8</div>
-                  <div className="text-gray-400">2nd Place</div>
+                  <div className="text-accent-600 font-bold text-lg">+8</div>
+                  <div className="text-muted">2nd Place</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-orange-400 font-bold text-lg">+5</div>
-                  <div className="text-gray-400">3rd Place</div>
+                  <div className="text-crimson font-bold text-lg">+5</div>
+                  <div className="text-muted">3rd Place</div>
                 </div>
               </div>
-              <p className="text-xs text-gray-500 mt-4">
+              <p className="text-xs text-muted mt-4">
                 Plus +1 point per 25 upvotes (capped at +10 bonus points)
               </p>
             </div>
@@ -106,7 +106,7 @@ export default async function Home() {
               <div className="text-center mt-8">
                 <a
                   href="/leaderboard"
-                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-yellow-600 to-orange-600 hover:from-yellow-500 hover:to-orange-500 text-white font-semibold rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                  className="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-accent text-bg hover:bg-accent-600 transition focus:outline-none focus:ring-2 focus:ring-accent/40"
                 >
                   View Full Leaderboard
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
