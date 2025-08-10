@@ -3,21 +3,24 @@
 @tailwind utilities;
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --accent: #E2B64D;      /* gold */
+  --accent-600: #C99A33;  /* gold hover */
+  --crimson: #C23030;     /* accents, rails, badges */
+  --crimson-700: #8E1F1F; /* darker crimson */
+  --ink: #E6E7EB;         /* primary text */
+  --muted: #9AA0B0;       /* secondary text */
+  --bg: #0A0E14;          /* app background */
+  --card: #0F141C;        /* card background */
+  --line: #1B2330;        /* hairlines */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html { 
+  color-scheme: dark; 
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+body { 
+  color: var(--ink); 
+  background: var(--bg); 
 }
 
 @layer utilities {
