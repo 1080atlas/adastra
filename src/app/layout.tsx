@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import '@/styles/globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import { fontSans, fontSerif } from './fonts'
 
 export const metadata: Metadata = {
   title: 'Ad Astra - r/redrising Prompt Archive',
@@ -27,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${fontSans.variable} ${fontSerif.variable}`}>
+      <body className="font-sans text-ink bg-bg">{children}</body>
     </html>
   )
 }
