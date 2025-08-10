@@ -26,17 +26,17 @@ export default async function LeaderboardPage() {
     <Layout>
       <div className="mb-12">
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold mb-4 text-accent">
             All-Time Leaderboard
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-ink max-w-3xl mx-auto leading-relaxed">
             Community members ranked by participation and engagement across all prompt archives.
           </p>
         </div>
 
-        <div className="bg-gray-800/30 border border-gray-700 rounded-lg p-6 mb-8">
-          <h2 className="text-lg font-semibold text-white mb-4">Scoring Methodology</h2>
-          <p className="text-gray-400 mb-6">
+        <div className="bg-card/30 border border-line rounded-lg p-6 mb-8">
+          <h2 className="font-serif text-lg font-semibold text-ink mb-4">Scoring Methodology</h2>
+          <p className="text-muted mb-6">
             Points: +5 per valid submission; +15/+8/+5 for 1st/2nd/3rd; +1 per 25 upvotes (capped at +10). 
             Scores are computed from the Submissions sheet when the archive refreshes.
           </p>
