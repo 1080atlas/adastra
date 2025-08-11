@@ -20,9 +20,6 @@ export default async function Home() {
   return (
     <Layout>
       <div className="text-center mb-16">
-        <h1 className="font-serif text-5xl md:text-6xl font-bold mb-8 text-accent">
-          Ad Astra
-        </h1>
         <p className="text-xl md:text-2xl text-ink max-w-4xl mx-auto leading-relaxed mb-8">
           Community prompt archive for{' '}
           <a 

@@ -1,4 +1,4 @@
-import { SubmissionForScore, LeaderboardEntry } from '@/types';
+import { Submission, LeaderboardEntry } from '@/types';
 
 export const POINTS = {
   submit: 5,
@@ -9,11 +9,20 @@ export const POINTS = {
   upvoteCap: 10,
 };
 
-export function computeLeaderboard(subs: SubmissionForScore[]): LeaderboardEntry[] {
+// Filter to only include valid submissions for scoring
+function isValidSubmission(submission: Submission): boolean {
+  // Only count submissions with valid votes
+  return submission.Votes_Valid?.toUpperCase() === 'YES';
+}
+
+export function computeLeaderboard(submissions: Submission[]): LeaderboardEntry[] {
+  // Filter out invalid submissions
+  const validSubmissions = submissions.filter(isValidSubmission);
+  
   const m = new Map<string, number>();
   const add = (u: string, p: number) => m.set(u, (m.get(u) ?? 0) + p);
 
-  for (const s of subs) {
+  for (const s of validSubmissions) {
     add(s.Author_Username, POINTS.submit);
     if (s.Is_Winner_Rank === 1) add(s.Author_Username, POINTS.first);
     if (s.Is_Winner_Rank === 2) add(s.Author_Username, POINTS.second);
