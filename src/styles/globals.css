@@ -46,7 +46,7 @@ body {
     radial-gradient(1px 1px at 80% 60%, #fff 60%, transparent 61%),
     radial-gradient(1px 1px at 40% 80%, #fff 60%, transparent 61%);
   background-repeat: repeat; 
-  opacity: .25;
+  opacity: .35;
 }
 
 .bg-stars::before { 
@@ -57,7 +57,7 @@ body {
 .bg-stars::after { 
   background-size: 300px 300px; 
   animation: drift 240s linear infinite reverse; 
-  opacity: .18; 
+  opacity: .28; 
 }
 
 @keyframes drift { 
